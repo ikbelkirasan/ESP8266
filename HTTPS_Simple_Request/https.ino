@@ -41,12 +41,12 @@ void setup() {
 
   client.print(String("GET ") + url + " HTTP/1.1\r\n" +
                "Host: " + host + "\r\n" +
-               "Authorization: dXNlck5hbWU6cGFzc3dvcmQ=\r\n" +
+               "Authorization: Basic dXNlck5hbWU6cGFzc3dvcmQ=\r\n" +
                "User-Agent: ESP8266\r\n" +
                "Connection: close\r\n\r\n");
 
   Serial.println("request sent");
-  
+
   while (client.connected()) {
     String line = client.readStringUntil('\n');
     if (line == "\r") {
